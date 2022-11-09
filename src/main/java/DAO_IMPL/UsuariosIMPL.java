@@ -11,22 +11,22 @@ public class UsuariosIMPL implements Usuarios_DAO{
     public UsuariosIMPL(Connection conn){
     }
     @Override
-    public void insert() {
+    public void insert(Usuarios user) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update() {
+    public void update(Usuarios user) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete() {
+    public void delete(Usuarios user) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Usuarios findOne() {
+    public Usuarios findOne(Usuarios user) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

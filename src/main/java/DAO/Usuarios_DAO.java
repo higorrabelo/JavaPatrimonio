@@ -15,10 +15,10 @@ import java.util.List;
  */
 public interface Usuarios_DAO {
     
-   void insert();
-   void update();
-   void delete();
-   Usuarios findOne();
+   void insert(Usuarios user);
+   void update(Usuarios user);
+   void delete(Usuarios user);
+   Usuarios findOne(Usuarios user);
    List<Usuarios> findAll();
     
 }

@@ -19,3 +19,4 @@ insert into item (nome,fabricante,quantidade,fornecedor,armazem) values ('Monito
 select * from usuarios;
 select * from item;
 update item set nome = "Teclado Mecânico", fabricante = "EPSON", quantidade = 18, fornecedor = "Magazine Luiza" , armazem = "Duque" where id_patrimonio = 1;
+delete from item where id_patrimonio = 2;

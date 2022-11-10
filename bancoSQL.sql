@@ -15,6 +15,7 @@ create table item(
     armazem varchar(90) not null
 );
 insert into usuarios(nome, email,  senha) values ('Higor','higor.rabelo@gmail.com',md5('Higor20')); 
-insert into item (nome,fabricante,quantidade,fornecedor,armazem) values ('Teclado Mecânico','Multilaser',20,'Magazan','Unidade Doca');
+insert into item (nome,fabricante,quantidade,fornecedor,armazem) values ('Monitor','LG',10,'Amazon','Unidade Duque');
 select * from usuarios;
 select * from item;
+update item set nome = "Teclado Mecânico", fabricante = "EPSON", quantidade = 18, fornecedor = "Magazine Luiza" , armazem = "Duque" where id_patrimonio = 1;

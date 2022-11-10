@@ -5,10 +5,10 @@ import DB.Db;
 
 public class DAOFactory {
     
-    public Usuarios_DAO criarUsuario(){
+    public static Usuarios_DAO criarUsuario(){
         return new UsuariosIMPL(Db.getConnection());
     }
-    public Item_DAO criarItem(){
+    public static Item_DAO criarItem(){
         return new ItemIMPL(Db.getConnection());
     }
     

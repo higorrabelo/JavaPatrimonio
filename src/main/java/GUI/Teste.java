@@ -1,20 +1,34 @@
 
 package GUI;
 
+import DAO.DAOFactory;
+import DAO.Item_DAO;
+import DB.DbException;
 import Models.Item;
 import Models.Usuarios;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
+
 public class Teste {
     public static void main(String[] args){
-        Usuarios user = new Usuarios();
-        Item it = new Item(4,"Teclado","Multilaser",10,"Americanas","Doca");
-        user.setId(3);
-        user.setNome("Higor");
-        user.setEmail("higor.rabelo@gmail.com");
-        user.setSenha("Higor20");
-        String us = user.toString();
-        String its = it.toString();
-        JOptionPane.showMessageDialog(null,us);
-        JOptionPane.showMessageDialog(null,its);
+        Item_DAO itemDao = DAOFactory.criarItem();
+        
+        
+        Item it = new Item(3,"Monitor","Samsumg",20,"Amazon","Unidade Doca");
+        
+        itemDao.update(it);
+        
+        List<Item> lista = new ArrayList<>();
+        try{
+            lista  = itemDao.findAll();
+            for(Item item : lista){
+                JOptionPane.showMessageDialog(null, item.toString());
+            }
+        }
+        catch(Exception e){
+            throw new DbException("Erro em executar a função \n"+e.getMessage());
+        }
     }
 }

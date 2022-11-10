@@ -3,6 +3,7 @@ package GUI;
 
 import DAO.DAOFactory;
 import DAO.Item_DAO;
+import DAO.Usuarios_DAO;
 import DB.DbException;
 import Models.Item;
 import Models.Usuarios;
@@ -13,22 +14,15 @@ import javax.swing.JOptionPane;
 
 public class Teste {
     public static void main(String[] args){
-        Item_DAO itemDao = DAOFactory.criarItem();
         
+        Usuarios_DAO userDAO = DAOFactory.criarUsuario();
+        List<Usuarios> lista = new ArrayList<>();
         
-        Item it = new Item(3,"Monitor","Samsumg",20,"Amazon","Unidade Doca");
+        lista = userDAO.findAll();
         
-        itemDao.update(it);
-        
-        List<Item> lista = new ArrayList<>();
-        try{
-            lista  = itemDao.findAll();
-            for(Item item : lista){
-                JOptionPane.showMessageDialog(null, item.toString());
-            }
+        for(Usuarios user : lista){
+            JOptionPane.showMessageDialog(null, user.toString());
         }
-        catch(Exception e){
-            throw new DbException("Erro em executar a função \n"+e.getMessage());
-        }
+        
     }
 }
